@@ -1,0 +1,22 @@
+version: 2.1
+orbs:
+  python: circleci/python@2.1.1
+
+workflows:
+  evaluate-commit:
+    jobs:
+      - run-commit-evals
+
+jobs:
+  run-commit-evals:
+    docker:
+      - image: cimg/python:3.10.5
+    steps:
+      - checkout
+      - python/install-packages:
+          pkg-manager: pip
+      - run:
+          name: Run hallucination detection tests
+          command: python -m pytest --junitxml results.xml test_hallucination.py
+      - store_test_results:
+          path: results.xml
