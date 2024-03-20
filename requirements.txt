@@ -29,6 +29,7 @@ jsonpointer==2.4
 jupyter_client==8.4.0
 jupyter_core==5.4.0
 langchain==0.0.326
+langchain_openai==0.0.8
 langsmith==0.0.54
 marshmallow==3.20.1
 matplotlib-inline==0.1.6
