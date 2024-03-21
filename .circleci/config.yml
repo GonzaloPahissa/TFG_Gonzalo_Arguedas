@@ -19,4 +19,4 @@ jobs:
           name: Run hallucination detection tests
           command: python -m pytest --junitxml results.xml test_hallucination.py
       - store_test_results:
-          path: results.xml
+          path: .
